@@ -1,0 +1,11 @@
+Input:(1) https://drive.google.com/file/d/1Y1P3mJ59mpVppLlJV9uE8GGFyA-DbJ9M/view?usp=sharing
+                                          
+       
+Output: (1) Using mode 'a'(automatic detection and segmentation): https://drive.google.com/file/d/1Hy5CXK78USie52eiAo_V9mdfbmgbF9X3/view?usp=share_link
+                                                                  https://drive.google.com/file/d/1vRDPKsrac914_TvXgPz98ZOZqqQ0AGoW/view?usp=share_link
+                                                                  https://drive.google.com/file/d/1MqKvQEuxpFaC9Ud9Tju3mLHgfSh1wJqW/view?usp=share_link
+                                      
+            Using mode 'm'(manually highlighting foreground and background)::  https://drive.google.com/file/d/1bKeCz6lOZLQeRvRkuaNbSrw3q2QoaQde/view?usp=share_link
+            Using mode 'r'(manually drawing a rectangle around object): https://drive.google.com/file/d/1truN0ZyxsJxMgf12QOBJ5LZjCzGEAlKD/view?usp=sharing
+          
+      
