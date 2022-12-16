@@ -1,5 +1,4 @@
 import cv2, numpy as ny
-draw, dx, dy, bound, method,cnt = 0, -1, -1, (), 0, 0
 
 def detect(ima):
     ob = cv2.dnn.readNet('yolov3-tiny.cfg', 'yolov3-tiny.weights')
@@ -32,7 +31,6 @@ def detect(ima):
             boun.append(bound[i])
     return boun, clone2
 
-
 def seg(image, bound2, mask, fore, back):
     global clone,cnt
     if ch.lower() in['a','r']:
@@ -42,6 +40,7 @@ def seg(image, bound2, mask, fore, back):
     print('success1')
     mask2 = ny.where((mask == 2) | (mask == 0), 0, 1).astype('uint8')
     clone = image * mask2[:, :, ny.newaxis]
+    cv2.imwrite('output.jpg', clone)
     cv2.imshow('fin', clone)
     cv2.waitKey(0)
 
@@ -67,7 +66,8 @@ def patimg(event, x, y, flags, param):
 
 
 # _main_
-ima = cv2.imread(r"C:\Users\Rohith\Downloads\20220814_155744.jpg")
+draw, dx, dy, bound, method,cnt = 0, -1, -1, (), 0, 0
+ima = cv2.imread(r"C:\Users\Rohith\Downloads\20221029_102435(1).jpg")
 ima = cv2.resize(ima, (560, 560), 0)
 ima = cv2.medianBlur(ima, 1)
 clone2=clone = ima.copy()
@@ -107,8 +107,8 @@ elif ch.lower() == 'r':
             break
     seg(ima, bound, mask, fore, back)
 else:
-    print(bound)
     for i in bound:
         seg(ima,i,mask,fore,back)
-
+        print("Press 'q' to continue...")
+        
 cv2.destroyAllWindows()
